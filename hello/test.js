@@ -5,7 +5,7 @@ app.use(express.json());
 
 const route = express.Router(); //not case sensitive
 // const route = express.Router({
-//   caseSensitive: true,  
+//   caseSensitive: true,
 // });
 app.use(route);
 app.use(

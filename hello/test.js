@@ -8,11 +8,13 @@ const route = express.Router(); //not case sensitive
 //   caseSensitive: true,
 // });
 app.use(route);
-app.use(
-  express.static(`${__dirname}/public/`, {
-    index: "home.html",
-  })
-);
+// app.use(
+//   express.static(`${__dirname}/public/`, {
+//     index: "home.html",
+//   })
+// );
+
+app.use(express.static(`${__dirname}/public/files`));
 
 app.get("/", (req, res) => {
   const obj = {

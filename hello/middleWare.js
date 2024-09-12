@@ -25,6 +25,11 @@ const logger = (req, res, next) => {
   //   throw new Error("oh!!!!! no error occure in this logger Middleware");
 };
 
+const secondMiddleWare = (req, res, next) => {
+  console.log("I am the another Middleware");
+  next();
+};
+
 app.get("/", (req, res) => {
   res.send("welcome to the root");
 });
@@ -33,7 +38,7 @@ app.get("/", (req, res) => {
 
 // app.use(logger);
 
-app.get("/application-level", (req, res) => {
+app.get("/application-level", [logger, secondMiddleWare], (req, res) => {
   res.send("logger called from application level");
 });
 
